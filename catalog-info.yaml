@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: uxlyumdzy-nodejs-gitops
+  description: This is GitOps manifest for uxlyumdzy-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: uxlyumdzy-nodejs
+    janus-idp.io/tekton: uxlyumdzy-nodejs 
+    backstage.io/kubernetes-id: uxlyumdzy-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:uxlyumdzy-nodejs
